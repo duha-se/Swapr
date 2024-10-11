@@ -1,7 +1,6 @@
 body {
   background-color: #d0efce;
-  margin: 0;
-  padding: 0;
+ 
 }
 
 .nav-container {
@@ -143,7 +142,7 @@ h3 {
   color: #d0efce;
   background-color: #255b4e;
   border-radius: 5px;
-  width: 600px;
+  /* width: 600px; */
   overflow: hidden;
   margin-bottom: 20px;
 }
@@ -348,19 +347,4 @@ h3 {
 .comment-btn:hover {
   background-color: #4f6253;
   transition: 0.3s ease;
-}
-
-footer {
-  position: fixed;
-  width: calc(100% - 200px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #255b4e;
-  bottom: 0;
-  left: 200px;
-  height: 80px;
-  z-index: 1000;
-  color: #d0efce;
 }

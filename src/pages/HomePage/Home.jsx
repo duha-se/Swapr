@@ -2,10 +2,10 @@ import React from 'react';
 import { Card, CardContent, CardMedia, Grid2, Typography, IconButton, TextField, Button, Box } from '@mui/material';
 import { LocationOn, Palette, Comment, Send } from '@mui/icons-material';
 import thinkingFace from "../../assets/ThinkingFace.svg";
-import profilePic from "../../assets/girlprof.png";
-import logo from "../../assets/lo.png";
-import posts from "./Posts";
 
+import posts from "./Posts";
+import VerticalTabs from '../../Components/VerticalTabs/VerticalTabs';
+import Appbar from '../../Components/AppBar/AppBar';
 import "./Home.css";
 
 
@@ -14,49 +14,11 @@ const HomePage = () => {
   <div>
           
             {/* Horizontal Tabs at the top */}
-            <div className="hor-tabs">
-              <div className="home-tab">
-                <img className="home-img" src={logo} alt="Logo" />
-              </div>
-              <div className="right-side-tab">
-                <img className="img-profile" src={profilePic} alt="Profile" />
-                <p>Duha Ki</p>
-              </div>
-            </div>
-    
+            <Appbar/>
             {/* Vertical Tabs on the left */}
+            <VerticalTabs/>
             <div className="main-content">
-              <div className="vertical-tabs">
-                <div className="tab-item">
-                  <i className="fa-solid fa-house" style={{ color: "#d0efce" }}></i>
-                  Home
-                </div>
-                <div className="tab-item">
-                  <i className="fa-regular fa-id-badge" style={{ color: "#d0efce" }}></i>
-                  Profile
-                </div>
-                <div className="tab-item">
-                  <i className="fa-brands fa-wpexplorer" style={{ color: "#d0efce" }}></i>
-                  Discover
-                </div>
-                <div className="tab-item">
-                  <i className="fa-solid fa-message" style={{ color: "#d0efce" }}></i>
-                  Messages
-                </div>
-                <div className="tab-item">
-                  <i className="fa-solid fa-rectangle-list" style={{ color: "#d0efce" }}></i>
-                  Friends List
-                </div>
-                <div className="tab-item">
-                  <i className="fa-solid fa-magnifying-glass" style={{ color: "#d0efce" }}></i>
-                  Search
-                </div>
-                <div className="tab-item">
-                  <i className="fa-solid fa-right-from-bracket" style={{ color: "#d0efce" }}></i>
-                  Log out
-                </div>
-              </div>
-    
+           
               <button className="new-post-button">Add New Post</button>
             </div>
     <Box sx={{ backgroundColor: '#d0efce', padding: 4 }}>
@@ -139,4 +101,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
 

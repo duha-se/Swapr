@@ -1,29 +1,28 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
 
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
 import profilePic from "../../assets/girlprof.png";
 import logo from "../../assets/lo.png";
-import Grid2 from '@mui/material/Grid';
-
+import Grid2 from "@mui/material/Grid";
 
 export default function ResponsiveAppBar() {
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#255b4e' }}>
+    <AppBar sx={{ backgroundColor: "#255b4e", position: "fixed" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Grid2 container alignItems="center" justifyContent="space-between">
             {/* Logo Section */}
             <Grid2 item>
-           <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
                 <img
                   src={logo}
                   alt="Logo"
-                  style={{ width: '100px', height: 'auto' }} 
+                  style={{ width: "100px", height: "auto" }}
                 />
               </Box>
             </Grid2>
@@ -41,5 +40,3 @@ export default function ResponsiveAppBar() {
     </AppBar>
   );
 }
-
- 

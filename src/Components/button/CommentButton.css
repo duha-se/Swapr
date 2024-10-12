@@ -1,0 +1,18 @@
+.comment-btn {
+  background-color: #255b4e; 
+  color: #d0efce; 
+  border: none;
+  cursor: pointer;
+  border-radius: 50%; 
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.comment-btn:hover {
+  background-color: #fafcfc; 
+  transition: 0.3s ease;
+}

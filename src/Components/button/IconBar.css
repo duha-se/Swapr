@@ -1,0 +1,33 @@
+.icon-bar {
+    display: flex;
+    gap: 12px; 
+    align-items: center; 
+    justify-content: flex-start; 
+    padding: 8px;
+    background-color: transparent; 
+  }
+  
+  .icon-item {
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 50%; 
+    width: 36px; 
+    height: 36px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
+    transition: transform 0.2s ease, background-color 0.2s ease; 
+  }
+  
+  .icon-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    transform: scale(1.1); 
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.888); 
+
+  }
+  
+  .icon-image {
+    width: 18px; 
+    height: 18px;
+  }
+  

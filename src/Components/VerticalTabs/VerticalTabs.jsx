@@ -57,10 +57,9 @@ export default function VerticalTabs() {
     <Box
       sx={{ display: 'flex',
         height: '100vh',
-        width:700 }}>
-          
+        bgcolor:'#E6F7EC'}}>
        <Grid2 container sx={{ flexGrow: 1 }}>
-       <Grid2 item xs={3} sx={{ borderColor: 'divider' }}>
+       <Grid2 item xs={3} sx={{borderColor: 'divider' }}>
       
       <Tabs
         orientation="vertical"
@@ -74,7 +73,6 @@ export default function VerticalTabs() {
               bgcolor: '#255b4e',
               borderRight: 1,
               height:'100vh',
-              
               '& .MuiTab-root': { color: '#E6F7EC'  },
               '& .Mui-selected': { color: '#E6F7EC' },
               
@@ -87,44 +85,36 @@ export default function VerticalTabs() {
               icon={<HomeIcon />}
               iconPosition="start"
               label="HOME"
-              sx={{ color: '#E6F7EC' ,justifyContent: 'center' }}
-              {...a11yProps(0)}/
-              >
+              {...a11yProps(0)}/>
 
         <Tab icon={<AccountCircleIcon />}
                iconPosition="start"
                label="PROFILE"
-               sx={{ color: '#E6F7EC',justifyContent: 'center' }}
                {...a11yProps(1)}/>
 
         <Tab icon={<ExploreIcon />}
               iconPosition="start"
               label="DISCOVER"
-              sx={{ color: '#E6F7EC' ,justifyContent: 'center' }}
               {...a11yProps(2)}/>
 
         <Tab icon={<ChatIcon />}
               iconPosition="start"
               label="MESSAGES"
-              sx={{ color: '#E6F7EC',justifyContent: 'center' }}
               {...a11yProps(3)}/>
 
         <Tab icon={<PersonSearchIcon />}
               iconPosition="start"
               label="FRIENDS LIST"
-              sx={{ color: '#E6F7EC',justifyContent: 'center' }}
               {...a11yProps(4)} />
 
         <Tab icon={<SearchIcon />}
               iconPosition="start"
               label="SEARCH"
-              sx={{ color: '#E6F7EC' ,justifyContent: 'center'}}
               {...a11yProps(5)} />
 
         <Tab icon={<LoginIcon />}
               iconPosition="start"
               label="LOG OUT"
-              sx={{ color: '#E6F7EC' ,justifyContent: 'center' }}
               {...a11yProps(6)} />
       </Tabs>
       </Grid2>

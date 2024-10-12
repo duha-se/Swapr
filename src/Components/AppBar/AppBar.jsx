@@ -3,12 +3,13 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import profilePic from "../../assets/girlprof.png";
 import logo from "../../assets/lo.png";
 import Grid2 from '@mui/material/Grid';
+
 
 export default function ResponsiveAppBar() {
   return (

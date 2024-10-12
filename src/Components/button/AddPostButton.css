@@ -1,14 +1,14 @@
 .add-post-button {
-    position: fixed; /* Keep the button in a fixed position */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right edge of the viewport */
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
     width: 100px;
     height: 100px;
-    background-color: #255b4e; /* Dark green background */
-    color: #d0efce; /* Light green text color */
+    background-color: #255b4e; 
+    color: #d0efce; 
     border: none;
-    border-radius: 50px; /* Circular shape */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 50px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     cursor: pointer;
     position: absolute;
     left: 240px;

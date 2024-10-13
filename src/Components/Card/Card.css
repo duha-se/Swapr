@@ -1,110 +1,76 @@
 .card-img {
-    width: 50%; 
-    height: auto;
-    border-right: 1px solid #ccc;
-    border-radius: 8px;
-     margin-bottom: 2;
-  }
-    .MuiCardMedia-img .MuiCardMedia-media .MuiCardMedia-root  {
-    width: 50%;
-  }
-  .username-time-div {
-    display: flex;
-    align-items: center;
-    width: 600px;
-    padding: 2px; 
-    background-color: #255b4e;
-    color: #d0efce;
-    border-bottom: 1px solid #d0efce;
- padding: 10px 16px;
-
-  }
-  .interact-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: transparent;
-    /* border-left: 1px solid #d0efce; */
-    bottom: 33rem;
-    left: 30rem;
-    position: relative;
-  }
-  
-  .interact-bar img {
-    width: 3rem;
-    height: 3rem;
-    cursor: pointer;
-  }
-  
-  .interact-bar-button {
-    background-color: #255b4e;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 10%;
-    border: #255b4e;
-    margin: 0.5rem 0.5rem;
-  }
-  
-  .interact-bar img:hover {
-    transform: scale(1.2);
-    transition: 0.3s ease;
-  }
-
-  .post-details{
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    background-color: transparent;
-    bottom: 20rem;
-    left: 21rem;
-    position: relative;
-    height: 10rem;
-     width: 10rem;
-      border:solid 0.2rem #d0efce;
-    overflow-y: scroll;
-  }
-
-/* .comment-section{
-    border:solid 0.2rem #d0efce;
-    width: 90%;
-    /* height: 6rem; */
-    /* margin: .5rem;
-    overflow: scroll;
-} */
-/* .MuiCardContent-root .comment-section {
-    /* position: relative;
-    bottom: 26rem; */
-    /* overflow-y: scroll;
-    padding: 0;
-
+  width: 50%;
+  height: auto;
+  border-right: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 2;
 }
- .MuiCardContent-root { */
-    /* overflow-y: scroll; */
-    /* padding: 0;
-} */ 
-/* .comment-section {
-    border: solid 0.2rem #d0efce;
-    width: 90%;
-    margin: 0.5rem;
-    /* Optional: Adjust height as needed */
-/* } */
 
-/* .MuiCardContent-root .comment-section {
-    overflow-y: scroll;
-    padding: 0;
-} */ 
+.MuiCardMedia-img .MuiCardMedia-media .MuiCardMedia-root {
+  width: 50%;
+}
+.username-time-div {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  padding: 2px;
+  background-color: #255b4e;
+  color: #d0efce;
+  border-bottom: 1px solid #d0efce;
+  padding: 10px 16px;
+}
+.interact-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  bottom: 33rem;
+  left: 30rem;
+  position: relative;
+}
+
+.interact-bar img {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.interact-bar-button {
+  background-color: #255b4e;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 10%;
+  border: #255b4e;
+  margin: 0.5rem 0.5rem;
+}
+
+.interact-bar img:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease;
+}
+
+.post-details {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  background-color: transparent;
+  bottom: 20rem;
+  left: 21rem;
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  border: solid 0.2rem #d0efce;
+  overflow-y: scroll;
+}
 
 .comment-section {
   width: 90%;
   margin: 0.5rem;
+  overflow-y: scroll;
 }
-
-.MuiCardContent-root .comment-section {
-  overflow-y: auto;
-  padding: 0;
+.profile-img-comment {
+  border-radius: "50%";
+  width: "40px";
+  height: "40px";
+  margin-right: "10px";
 }
-
-.MuiCardContent-root {
-  padding: 0;
-}
-

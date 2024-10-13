@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconButton } from '@mui/material';
-import './IconBar.css'; // Import the updated CSS file
+import './IconBar.css'; 
 
 const IconBar = ({ emojiIcon }) => {
   return (

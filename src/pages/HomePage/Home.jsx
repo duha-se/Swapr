@@ -1,14 +1,9 @@
 import React from "react";
-import {
-
-  Grid2,
-  
-  Box,
-} from "@mui/material";
+import { Grid2, Box } from "@mui/material";
 
 import profilePic from "../../assets/girlprof.png";
 
-import AddPostButton from "../../Components/button/AddPostButton";
+import AddPostButton from "../../Components/Button/AddPostButton";
 
 import CardComponents from "../../Components/Card/Card";
 
@@ -27,10 +22,9 @@ const HomePage = () => {
       <VerticalTabs />
       <AddPostButton />
       <Box className="user-contain">
-       
-        <Grid2 container direction="column" alignItems="center" spacing={2}>
+        <Grid2  xs={8} sm={6} container direction="column" alignItems="center" spacing={2}>
           {posts.map((post, id) => (
-            <Grid2 item key={id} xs={6}>
+            <Grid2  xs={8} sm={6} item="true"  key={id} >
               <CardComponents
                 username={post.username}
                 userImage={post.userImage}
@@ -39,10 +33,8 @@ const HomePage = () => {
                 profilePic={profilePic}
               />
             </Grid2>
-           
           ))}
         </Grid2>
-        
       </Box>
     </>
   );

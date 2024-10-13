@@ -1,3 +1,6 @@
 .Mui-selected {
   color: #000 !important;
 }
+.MuiTabs-scroller{
+  top:4rem;
+}

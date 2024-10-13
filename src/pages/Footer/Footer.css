@@ -1,5 +1,6 @@
 .footer {
   position: fixed;
+  overflow-y: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;

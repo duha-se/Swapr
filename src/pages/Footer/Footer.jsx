@@ -1,21 +1,24 @@
 import React from "react";
+import { Box } from "@mui/material";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import CopyrightIcon from "@mui/icons-material/Copyright";
 import "./Footer.css";
 
 function Footer() {
   return (
     <>
-    <div className= "footer">
-      <p>
-        <i className="fa-brands fa-linkedin" style={{ color: "#000000" }}></i>
-        <i className="fa-brands fa-instagram" style={{ color: "#000000" }}></i>
-      </p>
-      <p>
-        <i className="fa-solid fa-copyright" style={{ color: "#000000" }}></i>
-        2024 swaprTeam@gmail.com All rights reserved.
-      </p>
-      </div>
+      <Box className="footer" sx={{ position: "fixed" , overflowY:'hidden', overflowX:'hidden' }}>
+        <Box sx={{ display: "flex", alignItems: "center", marginTop: 2 ,overflowY:'hidden'}}>
+          <LinkedInIcon />
+          <InstagramIcon />
+        </Box>
+        <Box sx={{ display: "flex", alignItems: "center", marginTop: 2 ,overflowY:'hidden'}}>
+          <CopyrightIcon />
+          2024 swaprTeam@gmail.com All rights reserved.
+        </Box>
+      </Box>
     </>
-    
   );
 }
 

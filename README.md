@@ -1,5 +1,7 @@
 # React + Vite, JavaScript 
 
-To run this code: \n
- npm i \n
+To run this code:
+< br / >
+ npm i
+< br / >
  npm run dev

@@ -7,16 +7,13 @@ import {
   Typography,
   IconButton,
   TextField,
-  Button,
   Box,
-  Dialog,
-  DialogTitle,
-  DialogContent,
 } from "@mui/material";
 import { LocationOn, Palette, Comment, Send } from "@mui/icons-material";
 import thinkingFace from "../../assets/ThinkingFace.svg";
 import "./Card.css";
 import DialogComponent from "../Dialog/Dialog";
+import ButtonComponent from "../Button/ButtonComponent";
 
 function CardComponents({
   username,
@@ -26,6 +23,17 @@ function CardComponents({
   profilePic,
 }) {
   const [open, setOpen] = useState(false);
+  const showMoreButton = {
+    color: "#d0efce",
+    textTransform: "none",
+    padding: 0,
+    marginTop: 2,
+    bottom: " 2rem",
+    left: " 3rem",
+    backgroundColor: "transparent",
+    border: "none",
+    boxShadow: "none",
+  };
 
   const handleShowMore = () => {
     setOpen(true);
@@ -103,10 +111,7 @@ function CardComponents({
               }}
             >
               <Box sx={{ padding: 2 }} className="post-details">
-                <Typography
-                  variant="body2"
-                  sx={{ color: "#c3e2cc" }}
-                >
+                <Typography variant="body2" sx={{ color: "#c3e2cc" }}>
                   <LocationOn
                     sx={{
                       color: "#ffffff",
@@ -175,6 +180,7 @@ function CardComponents({
                     alt="Thinking Face"
                     style={{ width: "30px" }}
                   />
+                  {postDetails.likes}
                 </IconButton>
                 <IconButton className="interact-bar-button">
                   <Comment sx={{ fontSize: 30, color: "#ffffff" }} />
@@ -223,19 +229,11 @@ function CardComponents({
 
               {/* Show more button */}
               {postDetails.comments.length > 2 && (
-                <Button
+                <ButtonComponent
                   onClick={handleShowMore}
-                  sx={{
-                    color: "#d0efce",
-                    textTransform: "none",
-                    padding: 0,
-                    marginTop: 2,
-                    bottom: " 2rem",
-                    left: " 3rem",
-                  }}
-                >
-                  Show more ...
-                </Button>
+                  sx={showMoreButton}
+                  text=" Show more ..."
+                />
               )}
             </Box>
           </CardContent>
@@ -270,12 +268,9 @@ function CardComponents({
               size="small"
               sx={{ backgroundColor: "#e2f2e2", borderRadius: 1, flexGrow: 1 }}
             />
-            <Button
-              variant="contained"
-              sx={{ backgroundColor: "#255b4e", marginLeft: 1 }}
-            >
+            <IconButton sx={{ backgroundColor: "#255b4e", marginLeft: 1 }}>
               <Send sx={{ color: "#d0efce" }} />
-            </Button>
+            </IconButton>
           </Box>
         </Card>
       </Grid2>

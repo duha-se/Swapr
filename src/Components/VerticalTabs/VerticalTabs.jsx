@@ -1,9 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import { Tab, Tabs, Box, Grid2, Typography } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ExploreIcon from "@mui/icons-material/Explore";
@@ -11,7 +8,7 @@ import ChatIcon from "@mui/icons-material/Chat";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import SearchIcon from "@mui/icons-material/Search";
 import LoginIcon from "@mui/icons-material/Login";
-import { Grid2 } from "@mui/material";
+
 import "./VerticalTabs.css";
 
 function TabPanel(props) {

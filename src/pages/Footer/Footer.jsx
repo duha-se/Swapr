@@ -8,12 +8,26 @@ import "./Footer.css";
 function Footer() {
   return (
     <>
-      <Box className="footer" sx={{ position: "fixed" , overflowY:'hidden', overflowX:'hidden' }}>
-        <Box sx={{ display: "flex", alignItems: "center", marginTop: 2 ,overflowY:'hidden'}}>
+      <Box className="footer">
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            // marginTop: 2,
+            overflowX: "hidden",
+          }}
+        >
           <LinkedInIcon />
           <InstagramIcon />
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center", marginTop: 2 ,overflowY:'hidden'}}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            // marginTop: 2,
+            overflowX: "hidden",
+          }}
+        >
           <CopyrightIcon />
           2024 swaprTeam@gmail.com All rights reserved.
         </Box>

@@ -1,5 +1,5 @@
-# React + Vite, JavaScript 
+# React + Vite, JavaScript /n
 
-To run this code:
- npm i
+To run this code:/n
+ npm i /n
  npm run dev

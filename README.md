@@ -1,7 +1,7 @@
 # React + Vite, JavaScript 
 
 To run this code:
-< br / >
+<br/>
  npm i
-< br / >
+<br/>
  npm run dev

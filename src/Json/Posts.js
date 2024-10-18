@@ -1,7 +1,7 @@
-import followerPic from "../../assets/profilepic.png";
-import dressPic from "../../assets/dress.jpg";
-import laptopPic from "../../assets/laptop.jpg";
-import dresserPic from "../../assets/Dresser.jpeg";
+import followerPic from "../assets/profilepic.png";
+import dressPic from "../assets/dress.jpg";
+import laptopPic from "../assets/laptop.jpg";
+import dresserPic from "../assets/Dresser.jpeg";
 
 const posts = [
   {

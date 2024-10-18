@@ -1,9 +1,16 @@
 import * as React from "react";
-import { AppBar, Box, Toolbar, IconButton, Container, Avatar } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Container,
+  Avatar,
+} from "@mui/material";
 import profilePic from "../../assets/girlprof.png";
 import logo from "../../assets/lo.png";
 
-const ResponsiveAppBar = () => {
+const AppBarComponent = () => {
   return (
     <AppBar sx={{ backgroundColor: "#255b4e", position: "fixed" }}>
       <Container maxWidth="xl">
@@ -13,10 +20,9 @@ const ResponsiveAppBar = () => {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              width: "100%", 
+              width: "100%",
             }}
           >
-            
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <img
                 src={logo}
@@ -25,7 +31,6 @@ const ResponsiveAppBar = () => {
               />
             </Box>
 
-           
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <IconButton sx={{ p: 0 }}>
                 <Avatar alt="Profile" src={profilePic} />
@@ -38,4 +43,4 @@ const ResponsiveAppBar = () => {
   );
 };
 
-export default ResponsiveAppBar;
+export default AppBarComponent;

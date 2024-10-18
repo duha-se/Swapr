@@ -1,9 +1,14 @@
 import * as React from "react";
+// import { useLocation } from 'react-router-dom';
 import { AppBar, Box, Toolbar, IconButton, Container, Avatar } from "@mui/material";
 import profilePic from "../../assets/girlprof.png";
 import logo from "../../assets/lo.png";
 
+
+
+
 const ResponsiveAppBar = () => {
+//const location = useLocation();
   return (
     <AppBar sx={{ backgroundColor: "#255b4e", position: "fixed" }}>
       <Container maxWidth="xl">
@@ -27,15 +32,19 @@ const ResponsiveAppBar = () => {
 
            
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              <IconButton sx={{ p: 0 }}>
-                <Avatar alt="Profile" src={profilePic} />
-              </IconButton>
+
+            {location.pathname !== '../../pages/ProfilePage/Profile.jsx' && (
+            <IconButton sx={{ p: 0 }}>
+            <Avatar alt="Profile" src={profilePic} />
+            </IconButton>
+            )}
+
             </Box>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
-};
+}
 
 export default ResponsiveAppBar;

@@ -1,14 +1,3 @@
 body {
   overflow-x: hidden;
 }
-.user-contain {
-  position: relative;
-  left: 30%;
-  top: 6rem;
-  color: #d0efce;
-  background-color: #255b4e;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  width: 600px;
-  height: 30rem;
-}

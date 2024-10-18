@@ -6,12 +6,25 @@ import profilePic from "../../assets/girlprof.png";
 import CardComponents from "../../Components/Card/Card";
 import VerticalTabs from "../../Components/VerticalTabs/VerticalTabs";
 import ButtonComponent from "../../Components/Button/ButtonComponent";
-import Appbar from "../../Components/AppBar/AppBar";
-import posts from "./Posts";
+import AppBarComponent from "../../Components/AppBar/AppBar";
+import posts from "../../Json/Posts";
 
 import "./Home.css";
+import Footer from "../Footer/Footer";
 
 const HomePage = () => {
+
+  const styledContain = {
+    position: 'relative',
+    left: '30%',
+    top: '6rem',
+    color:' #d0efce',
+    backgroundColor:' #255b4e',
+    boxShadow:' 0 4px 8px rgba(0, 0, 0, 0.1)',
+    borderRadius:' 5px',
+    width: '600px',
+    height: '30rem'
+  }
   const addPostbuttonStyles = {
     position: "fixed",
     left: "10rem",
@@ -41,12 +54,12 @@ const HomePage = () => {
   return (
     <>
       {/* Horizontal Tabs at the top */}
-      <Appbar />
+      <AppBarComponent />
       {/* Vertical Tabs on the left */}
       <VerticalTabs />
       <ButtonComponent sx={addPostbuttonStyles} text="Add New Post" />
 
-      <Box className="user-contain">
+      <Box sx={styledContain}>
         <Grid2
           xs={8}
           sm={6}
@@ -69,6 +82,7 @@ const HomePage = () => {
           ))}
         </Grid2>
       </Box>
+      <Footer/>
     </>
   );
 };

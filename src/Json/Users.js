@@ -1,0 +1,50 @@
+import followerPic from "../assets/profilepic.png";
+//add email,password,address, mobile,birthDate, gender
+const UsersData = [
+  {
+    id: "00",
+    username: "XYZ T",
+    profilePic: followerPic,
+  },
+  { id: "01", username: "ABC", profilePic: followerPic },
+  { id: "02", username: "DEF", profilePic: followerPic },
+  { id: "03", username: "HIJ", profilePic: followerPic },
+  { id: "04", username: "KLM", profilePic: followerPic },
+  { id: "05", username: "MNO", profilePic: followerPic },
+  { id: "06", username: "PQR", profilePic: followerPic },
+  { id: "07", username: "STU", profilePic: followerPic },
+  { id: "08", username: "VWX", profilePic: followerPic },
+  { id: "09", username: "YZ", profilePic: followerPic },
+  { id: "10", username: "QWV", profilePic: followerPic },
+  { id: "11", username: "ZCV", profilePic: followerPic },
+  { id: "12", username: "PMS", profilePic: followerPic },
+  { id: "13", username: "PMS", profilePic: followerPic },
+  { id: "14", username: "ERD", profilePic: followerPic },
+  { id: "15", username: "CPL", profilePic: followerPic },
+  { id: "16", username: "ZXMK", profilePic: followerPic },
+  { id: "17", username: "ZXL", profilePic: followerPic },
+  { id: "18", username: "ERQ", profilePic: followerPic },
+  { id: "19", username: "IUC", profilePic: followerPic },
+  { id: "20", username: "SKMV", profilePic: followerPic },
+  { id: "21", username: "OPC", profilePic: followerPic },
+  { id: "22", username: "QDC", profilePic: followerPic },
+  {
+    id: "23",
+    username: "Sundus Ta",
+    profilePic: followerPic,
+  },
+
+  { id: "24", username: "Mohammad Q", profilePic: followerPic },
+  { id: "25", username: "Abed F", profilePic: followerPic },
+  { id: "26", username: "Rami N", profilePic: followerPic },
+  { id: "27", username: "Leen G", profilePic: followerPic },
+  { id: "28", username: "Aisha Z", profilePic: followerPic },
+  { id: "29", username: "Rami B", profilePic: followerPic },
+  { id: "30", username: "Basil V", profilePic: followerPic },
+  { id: "31", username: "Ahmad S", profilePic: followerPic },
+  { id: "32", username: "Dalia Gh", profilePic: followerPic },
+  { id: "33", username: "Fatema R", profilePic: followerPic },
+  { id: "34", username: "Ali P", profilePic: followerPic },
+];
+
+export default UsersData;

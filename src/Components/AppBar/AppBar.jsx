@@ -1,14 +1,17 @@
 import * as React from "react";
-// import { useLocation } from 'react-router-dom';
-import { AppBar, Box, Toolbar, IconButton, Container, Avatar } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Container,
+  Avatar,
+} from "@mui/material";
 import profilePic from "../../assets/girlprof.png";
 import logo from "../../assets/lo.png";
 
+const AppBarComponent = () => {
 
-
-
-const ResponsiveAppBar = () => {
-//const location = useLocation();
   return (
     <AppBar sx={{ backgroundColor: "#255b4e", position: "fixed" }}>
       <Container maxWidth="xl">
@@ -18,10 +21,9 @@ const ResponsiveAppBar = () => {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              width: "100%", 
+              width: "100%",
             }}
           >
-            
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <img
                 src={logo}
@@ -30,7 +32,6 @@ const ResponsiveAppBar = () => {
               />
             </Box>
 
-           
             <Box sx={{ display: "flex", alignItems: "center" }}>
 
             {location.pathname !== '../../pages/ProfilePage/Profile.jsx' && (
@@ -47,4 +48,4 @@ const ResponsiveAppBar = () => {
   );
 }
 
-export default ResponsiveAppBar;
+export default AppBarComponent;

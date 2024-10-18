@@ -23,7 +23,7 @@ function CardComponents({
   profilePic,
 }) {
   const [open, setOpen] = useState(false);
-  const showMoreButton = {
+  const showMoreButtonStyle = {
     color: "#d0efce",
     textTransform: "none",
     padding: 0,
@@ -231,7 +231,7 @@ function CardComponents({
               {postDetails.comments.length > 2 && (
                 <ButtonComponent
                   onClick={handleShowMore}
-                  sx={showMoreButton}
+                  sx={showMoreButtonStyle}
                   text=" Show more ..."
                 />
               )}

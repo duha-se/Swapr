@@ -11,7 +11,6 @@ import profilePic from "../../assets/girlprof.png";
 import logo from "../../assets/lo.png";
 
 const AppBarComponent = () => {
-
   return (
     <AppBar sx={{ backgroundColor: "#255b4e", position: "fixed" }}>
       <Container maxWidth="xl">
@@ -33,19 +32,17 @@ const AppBarComponent = () => {
             </Box>
 
             <Box sx={{ display: "flex", alignItems: "center" }}>
-
-            {location.pathname !== '../../pages/ProfilePage/Profile.jsx' && (
-            <IconButton sx={{ p: 0 }}>
-            <Avatar alt="Profile" src={profilePic} />
-            </IconButton>
-            )}
-
+              {location.pathname !== "../../pages/ProfilePage/Profile.jsx" && (
+                <IconButton sx={{ p: 0 }}>
+                  <Avatar alt="Profile" src={profilePic} />
+                </IconButton>
+              )}
             </Box>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
-}
+};
 
 export default AppBarComponent;

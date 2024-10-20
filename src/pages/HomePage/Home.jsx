@@ -8,8 +8,6 @@ import VerticalTabs from "../../Components/VerticalTabs/VerticalTabs";
 import ButtonComponent from "../../Components/Button/ButtonComponent";
 import AppBarComponent from "../../Components/AppBar/AppBar";
 import posts from "../../Json/Posts";
-
-import "./Home.css";
 import Footer from "../Footer/Footer";
 
 const HomePage = () => {

@@ -18,6 +18,7 @@ import VerticalTabs from "../../Components/VerticalTabs/VerticalTabs";
 import AppBarComponent from "../../Components/AppBar/AppBar";
 import { getFriends, addFriend } from "../../service/FriendList.service";
 import { getAllUsers } from "../../service/AllUsers.service";
+import Footer from "../Footer/Footer";
 
 const SearchPage = () => {
   const [users, setUsers] = useState([]);
@@ -54,10 +55,15 @@ const SearchPage = () => {
   const handleProfileClick = (id) => {
     navigate(`/profile/${id}`);
   };
+  // const handleAddFriend = (newFriend) => {
+  //   addFriend(newFriend);
+  //   setUsers(UnFriendUsers);
+  // };
   const handleAddFriend = (newFriend) => {
-    addFriend(newFriend);
-    setUsers(UnFriendUsers);
+    const updatedFriends = addFriend(newFriend);
+    setUsers(updatedFriends); // Update the state after adding
   };
+
   return (
     <>
       <AppBarComponent />
@@ -82,15 +88,22 @@ const SearchPage = () => {
             padding: "1rem 2rem",
             marginTop: "5vh",
             width: "30vw",
-            bgcolor: "#e8f5e9",
+            bgcolor: "#255b4e",
             gap: "1rem",
           }}
         >
-          <Search />
+          <Search
+            sx={{
+              color: "#d0efce",
+            }}
+          />
           <InputBase
             placeholder="Search New Friend"
             value={searchTerm}
             onChange={handleSearch}
+            sx={{
+              color: "#d0efce",
+            }}
           />
         </Box>
         <Grid2 container spacing={3} justifyContent="center">
@@ -120,7 +133,7 @@ const SearchPage = () => {
                     <Link
                       component="button"
                       variant="body2"
-                      onClick={() => handleProfileClick(user.id)} // Navigate on click
+                      onClick={() => handleProfileClick(user.id)}
                       sx={{
                         cursor: "pointer",
                         textDecoration: "none",
@@ -136,6 +149,7 @@ const SearchPage = () => {
           </List>
         </Grid2>
       </Box>
+      <Footer />
     </>
   );
 };

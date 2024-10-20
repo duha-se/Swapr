@@ -8,10 +8,11 @@ import {
   IconButton,
   TextField,
   Box,
+  styled,
 } from "@mui/material";
+
 import { LocationOn, Palette, Comment, Send } from "@mui/icons-material";
 import thinkingFace from "../../assets/ThinkingFace.svg";
-import "./Card.css";
 import DialogComponent from "../Dialog/Dialog";
 import ButtonComponent from "../Button/ButtonComponent";
 
@@ -23,17 +24,6 @@ function CardComponents({
   profilePic,
 }) {
   const [open, setOpen] = useState(false);
-  const showMoreButtonStyle = {
-    color: "#d0efce",
-    textTransform: "none",
-    padding: 0,
-    marginTop: 2,
-    bottom: " 2rem",
-    left: " 3rem",
-    backgroundColor: "transparent",
-    border: "none",
-    boxShadow: "none",
-  };
 
   const handleShowMore = () => {
     setOpen(true);
@@ -58,7 +48,7 @@ function CardComponents({
             position: "relative",
           }}
         >
-          <CardContent className="username-time-div">
+          <CardContent sx={usernameTimeSection}>
             <img
               src={userImage}
               alt="User"
@@ -110,7 +100,13 @@ function CardComponents({
                 justifyContent: "space-between",
               }}
             >
-              <Box sx={{ padding: 2 }} className="post-details">
+              <Box
+                sx={
+                  postDetails.postImage
+                    ? postDetailsStyleWithImage
+                    : postDetailsStyleWithoutImage
+                }
+              >
                 <Typography variant="body2" sx={{ color: "#c3e2cc" }}>
                   <LocationOn
                     sx={{
@@ -160,38 +156,44 @@ function CardComponents({
                 )}
               </Box>
               <Box
-                className="interact-bar"
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "center",
-                  paddingBottom: 2,
-                }}
+                sx={
+                  postDetails.postImage
+                    ? interactBarStyledWithImage
+                    : interactBarStyledWithoutImage
+                }
               >
-                <IconButton className="interact-bar-button">
+                <IconButtonStyled>
                   <i
                     className="fa-solid fa-magnet fa-xl"
                     style={{ color: "#000000" }}
                   ></i>
-                </IconButton>
-                <IconButton className="interact-bar-button">
+                </IconButtonStyled>
+                <IconButtonStyled>
                   <img
                     src={thinkingFace}
                     alt="Thinking Face"
-                    style={{ width: "30px" }}
+                    style={{
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      cursor: "pointer",
+                    }}
                   />
                   {postDetails.likes}
-                </IconButton>
-                <IconButton className="interact-bar-button">
+                </IconButtonStyled>
+                <IconButtonStyled>
                   <Comment sx={{ fontSize: 30, color: "#ffffff" }} />
-                </IconButton>
+                </IconButtonStyled>
               </Box>
             </Grid2>
           </Grid2>
 
           {/* Comments Section */}
           <CardContent
-            sx={{ padding: 2, position: "relative", bottom: "27rem" }}
+            sx={
+              postDetails.postImage
+                ? commentSectionStyleWithImage
+                : commentSectionStyleWithoutImage
+            }
           >
             <Typography
               variant="h6"
@@ -275,7 +277,7 @@ function CardComponents({
         </Card>
       </Grid2>
 
-      {/* Showw All Comments pop-up */}
+      {/* Show All Comments pop-up */}
       <DialogComponent
         open={open}
         onClose={handleClose}
@@ -287,3 +289,99 @@ function CardComponents({
 }
 
 export default CardComponents;
+
+const usernameTimeSection = {
+  display: "flex",
+  alignItems: "center",
+  width: "600px",
+  padding: "2px",
+  backgroundColor: "#255b4e",
+  color: "#d0efce",
+  borderBottom: "1px solid #d0efce",
+};
+
+const postDetailsStyleWithImage = {
+  display: "flex",
+  flexDirection: "column",
+  overflowY: "scroll",
+  backgroundColor: "transparent",
+  bottom: "17rem",
+  left: "20rem",
+  position: "relative",
+  height: "10rem",
+  width: "10rem",
+  border: "solid 0.2rem #d0efce",
+  padding: 2,
+};
+
+const postDetailsStyleWithoutImage = {
+  display: "flex",
+  flexDirection: "column",
+  overflowY: "scroll",
+  backgroundColor: "transparent",
+  top: "2rem",
+  left: "1rem",
+  position: "relative",
+  height: "2rem",
+  width: "29rem",
+  border: "solid 0.2rem #d0efce",
+  padding: 2,
+};
+
+const interactBarStyledWithImage = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "space-evenly",
+  backgroundColor: "transparent",
+  bottom: "31rem",
+  left: "29rem",
+
+  position: "relative",
+  paddingBottom: 2,
+};
+
+const interactBarStyledWithoutImage = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "space-evenly",
+  backgroundColor: "transparent",
+  bottom: "4rem",
+  left: "19rem",
+  position: "relative",
+  paddingBottom: 2,
+};
+
+const commentSectionStyleWithImage = {
+  padding: 2,
+  position: "relative",
+  bottom: "27rem",
+};
+
+const commentSectionStyleWithoutImage = {
+  padding: 2,
+  position: "relative",
+  bottom: "13rem",
+};
+
+const IconButtonStyled = styled(IconButton)({
+  backgroundColor: "#255b4e",
+  width: "4rem",
+  height: "4rem",
+  borderRadius: "10%",
+  border: "#255b4e",
+  margin: "0.5rem 0.5rem",
+});
+
+const showMoreButtonStyle = {
+  color: "#d0efce",
+  textTransform: "none",
+  padding: 0,
+  marginTop: 2,
+  bottom: "2rem",
+  left: "3rem",
+  backgroundColor: "transparent",
+  border: "none",
+  boxShadow: "none",
+};

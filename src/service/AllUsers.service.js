@@ -6,7 +6,8 @@ export const getAllUsers = () => {
 };
 
 export const signup = (newUser) => {
-  AllUsers = [...AllUsers, newUser];
+    //give the user new id
+  AllUsers = [...AllUsers, newUser,id];
   return AllUsers;
 };
 

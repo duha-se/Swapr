@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Tab, Tabs, Box, styled } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -15,7 +15,7 @@ const VerticalTabs = () => {
   const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
-
+  const location = useLocation();
   const handleClose = () => {
     setOpen(false);
   };
@@ -23,10 +23,13 @@ const VerticalTabs = () => {
     backgroundColor: "#255b4e",
     borderRight: 1,
     height: "100vh",
-    "& .MuiTab-root": { color: "#E6F7EC" },
-    "& .Mui-selected": {
-      color: " #000",
+    "& .MuiTab-root": {
+      color: "#d0efce",
     },
+    "& .Mui-selected": {
+      color: " #000 !important ",
+    },
+
     "& .MuiTabs-scroller": {
       top: "4rem",
     },
@@ -52,18 +55,42 @@ const VerticalTabs = () => {
         break;
       case "FriendsList":
         setOpen(true);
+        break;
+      case "logout":
+        navigate("/login");
+        break;
 
       default:
         break;
     }
   };
 
+  const getValueFromLocation = (path) => {
+    switch (path) {
+      case "/home":
+        return "Home";
+      case "/profile":
+        return "Profile";
+      case "/discover":
+        return "Discover";
+      case "/messages":
+        return "Messages";
+      case "/search":
+        return "search";
+      case "/login":
+        return "logout";
+      default:
+        return "Home";
+    }
+  };
+
+  const currentValue = getValueFromLocation(location.pathname);
   return (
     <Box sx={{ position: "fixed", left: 0 }}>
       <StyledTabs
         orientation="vertical"
         variant="scrollable"
-        value={value}
+        value={currentValue}
         onChange={handleChange}
         TabIndicatorProps={{ style: { backgroundColor: "#E6F7EC" } }}
       >

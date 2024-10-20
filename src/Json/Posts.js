@@ -77,7 +77,7 @@ const posts = [
   {
     username: "Ali M",
     userImage: followerPic,
-    timePublished: "2024-10-01T19:00:00",
+    timePublished: "2024-10-01 19:00:00",
     postDetails: {
       postImage: laptopPic,
       description: "Used Laptop for Sale",
@@ -98,7 +98,7 @@ const posts = [
   {
     username: "Ahmad Q",
     userImage: followerPic,
-    timePublished: "2024-10-02T15:30:00",
+    timePublished: "2024-10-02 15:30:00",
     postDetails: {
       postImage: dresserPic,
       description:
@@ -118,23 +118,44 @@ const posts = [
       likes: 10,
     },
   },
-  // {
-  //   username: "Sundus Ta",
-  //   userImage:  followerPic ,
-  //   timePublished: "2024-10-02 18:30",
-  //   postDetails: {
-
-  //     description: "I looking for xyz book to borrow, just for 2 weeks",
-  //     address: "Jerusalem",
-  //     comments: [
-  //       {
-  //         username: "Dalia Gh",
-  //         comment: "I have this book, contact me",
-  //       },
-  //     ],
-  //     likes: 10,
-  //   },
-  // },
+  {
+    username: "Sundus Ta",
+    userImage: followerPic,
+    timePublished: "2024-10-02 18:30",
+    postDetails: {
+      description: "I looking for xyz book to borrow, just for 2 weeks",
+      address: "Jerusalem",
+      comments: [
+        {
+          username: "Dalia Gh",
+          comment: "I have this book, contact me",
+        },
+      ],
+      likes: 10,
+    },
+  },
+  {
+    username: "Rose F",
+    userImage: followerPic,
+    timePublished: "2024-10-11 09:30",
+    postDetails: {
+      description: "I looking for xyz car to rent for 3 days",
+      color: "White",
+      size: "7",
+      address: "Jafa",
+      comments: [
+        {
+          username: "Duha K",
+          comment: "I have but the color is red :)",
+        },
+        {
+          username: "Duha K",
+          comment: "I have but the color is balck :)",
+        },
+      ],
+      likes: 7,
+    },
+  },
 ];
 
 export default posts;

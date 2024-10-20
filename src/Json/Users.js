@@ -6,7 +6,17 @@ const UsersData = [
     username: "XYZ T",
     profilePic: followerPic,
   },
-  { id: "01", username: "ABC", profilePic: followerPic },
+  {
+    id: "01",
+    email: "abc@gmail.com",
+    password: "111111",
+    username: "ABC",
+    profilePic: followerPic,
+    address: "Jerusalem",
+    mobile: "0549883838",
+    birthDate: "10/07/1999",
+    gender: "Female",
+  },
   { id: "02", username: "DEF", profilePic: followerPic },
   { id: "03", username: "HIJ", profilePic: followerPic },
   { id: "04", username: "KLM", profilePic: followerPic },
@@ -46,5 +56,6 @@ const UsersData = [
   { id: "33", username: "Fatema R", profilePic: followerPic },
   { id: "34", username: "Ali P", profilePic: followerPic },
 ];
+//write here
 
 export default UsersData;

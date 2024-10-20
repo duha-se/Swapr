@@ -15,7 +15,7 @@ const posts = [
       size: "M",
       price: 200,
       currency: "₪",
-      address: "Jerusalem - Bait Hanina",
+      address: "Jerusalem",
       comments: [
         {
           username: "Dalia Gh",

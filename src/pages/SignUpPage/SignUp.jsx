@@ -91,18 +91,17 @@ function SignUpForm() {
 
     UsersData.push(newUser);
 
-    
-    setOpenSnackbar(true); 
+    setOpenSnackbar(true);
 
     console.log("Updated Users:", UsersData);
 
     setTimeout(() => {
       navigate("/home");
-    }, 2000); 
+    }, 2000);
   };
 
   return (
-    <Box sx={SignInContainer} direction="column" justifyContent="space-between">
+    <Box sx={SignInContainer} direction="column" >
       <Card variant="outlined" sx={CardStyle}>
         <Box
           component="form"
@@ -112,7 +111,7 @@ function SignUpForm() {
             flexDirection: "column",
             alignItems: "center",
             gap: 1.5,
-            p: 5,
+            p: 3,
           }}
         >
           <Typography
@@ -238,7 +237,6 @@ function SignUpForm() {
             </Grid2>
           </Grid2>
 
-          {/* Date of Birth and Gender in one row */}
           <Grid2
             container
             spacing={2}
@@ -317,9 +315,9 @@ function SignUpForm() {
       </Card>
       <Snackbar
         open={openSnackbar}
-        autoHideDuration={2000} 
+        autoHideDuration={2000}
         onClose={() => setOpenSnackbar(false)}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }} 
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
       >
         <Alert
           onClose={() => setOpenSnackbar(false)}
@@ -363,7 +361,7 @@ const CardStyle = {
 };
 
 const SignInContainer = {
-  height: "auto",
+  height: "50rem",
   width: "50rem",
   backgroundImage: `url(${backgroundImg})`,
   backgroundRepeat: "no-repeat",

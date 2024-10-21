@@ -11,50 +11,13 @@ import posts from "../../Json/Posts";
 import Footer from "../Footer/Footer";
 
 const HomePage = () => {
-
-  const styledContain = {
-    position: 'relative',
-    left: '30%',
-    top: '6rem',
-    color:' #d0efce',
-    backgroundColor:' #255b4e',
-    boxShadow:' 0 4px 8px rgba(0, 0, 0, 0.1)',
-    borderRadius:' 5px',
-    width: '600px',
-    height: '30rem'
-  }
-  const addPostbuttonStyles = {
-    position: "fixed",
-    left: "10rem",
-    top: "7rem",
-    width: "6rem",
-    height: "6rem",
-    padding: "3rem 4rem",
-    backgroundColor: "#255b4e",
-    color: "#d0efce",
-    border: "none",
-    borderRadius: "0 0 100px 0",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    cursor: "pointer",
-    fontSize: "0.9rem",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    lineHeight: "1.4",
-    transform: "translateY(-50px)",
-    "&:hover": {
-      backgroundColor: "#d0efce",
-      color: "#255b4e",
-    },
-  };
-
   return (
     <>
       {/* Horizontal Tabs at the top */}
       <AppBarComponent />
       {/* Vertical Tabs on the left */}
       <VerticalTabs />
+      {/* Add New POst Button */}
       <ButtonComponent sx={addPostbuttonStyles} text="Add New Post" />
 
       <Box sx={styledContain}>
@@ -80,9 +43,45 @@ const HomePage = () => {
           ))}
         </Grid2>
       </Box>
-      <Footer/>
+      <Footer />
     </>
   );
 };
 
 export default HomePage;
+const styledContain = {
+  position: "relative",
+  left: "30%",
+  top: "6rem",
+  color: " #d0efce",
+  backgroundColor: " #255b4e",
+  boxShadow: " 0 4px 8px rgba(0, 0, 0, 0.1)",
+  borderRadius: " 5px",
+  width: "600px",
+  height: "30rem",
+};
+const addPostbuttonStyles = {
+  position: "fixed",
+  left: "10rem",
+  top: "7rem",
+  width: "6rem",
+  height: "6rem",
+  padding: "3rem 4rem",
+  backgroundColor: "#255b4e",
+  color: "#d0efce",
+  border: "none",
+  borderRadius: "0 0 100px 0",
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  cursor: "pointer",
+  fontSize: "0.9rem",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
+  lineHeight: "1.4",
+  transform: "translateY(-50px)",
+  "&:hover": {
+    backgroundColor: "#d0efce",
+    color: "#255b4e",
+  },
+};

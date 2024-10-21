@@ -34,9 +34,11 @@ function SignUpForm() {
     agree: false,
   });
 
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [openSnackbar, setOpenSnackbar] = useState(false); // Snackbar state
+  const [alertMessages, setAlertMessages] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [successfulRegister, setsuccessfulRegister] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const navigate = useNavigate();
 
@@ -62,17 +64,21 @@ function SignUpForm() {
     e.preventDefault();
 
     if (!validateEmail(formData.email)) {
-      setEmailError(
+      setEmailError(true);
+      setAlertMessages(
         "Please enter a valid email address (e.g., yourname@gmail.com)."
       );
+      setOpenSnackbar(true);
       return;
     } else {
       setEmailError("");
     }
     if (!validatePassword(formData.password)) {
-      setPasswordError(
+      setPasswordError(true);
+      setAlertMessages(
         "Password must be at least 8 characters long and contain uppercase, lowercase letters, and numbers."
       );
+      setOpenSnackbar(true);
       return;
     } else {
       setPasswordError("");
@@ -90,7 +96,8 @@ function SignUpForm() {
     };
 
     UsersData.push(newUser);
-
+    setsuccessfulRegister(true);
+    setAlertMessages(" User registered successfully!");
     setOpenSnackbar(true);
 
     console.log("Updated Users:", UsersData);
@@ -101,7 +108,7 @@ function SignUpForm() {
   };
 
   return (
-    <Box sx={SignInContainer} direction="column" >
+    <Box sx={SignInContainer} direction="column">
       <Card variant="outlined" sx={CardStyle}>
         <Box
           component="form"
@@ -114,15 +121,30 @@ function SignUpForm() {
             p: 3,
           }}
         >
-          <Typography
-            component="h1"
-            variant="h4"
-            sx={{ fontSize: "clamp(1rem, 5vw, 2rem)", alignContent: "center" }}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              gap: 0.5,
+              position: "relative",
+              bottom: "1rem",
+            }}
           >
-            SIGN UP
-          </Typography>
-          <Typography variant="subtitle1">We are happy to join us</Typography>
-
+            <Typography
+              component="h1"
+              variant="h4"
+              sx={{
+                fontSize: "clamp(1rem, 5vw, 2rem)",
+                alignContent: "center",
+              }}
+            >
+              SIGN UP
+            </Typography>
+            <Typography variant="subtitle1">We are happy to join us</Typography>
+          </Box>
           <Box
             sx={{
               display: "flex",
@@ -147,7 +169,22 @@ function SignUpForm() {
               autoComplete="email"
               onChange={handleChange}
             />
-            {emailError && <Alert severity="error">{emailError}</Alert>}
+            {emailError && (
+              <Snackbar
+                open={openSnackbar}
+                autoHideDuration={2000}
+                onClose={() => setOpenSnackbar(false)}
+                anchorOrigin={{ vertical: "bootom", horizontal: "right" }}
+              >
+                <Alert
+                  onClose={() => setOpenSnackbar(false)}
+                  severity="error"
+                  sx={{ width: "100%" }}
+                >
+                  {alertMessages}
+                </Alert>
+              </Snackbar>
+            )}
           </Box>
 
           <Box
@@ -196,7 +233,23 @@ function SignUpForm() {
               onChange={handleChange}
               error={!!passwordError}
             />
-            {passwordError && <Alert severity="error">{passwordError}</Alert>}
+            {passwordError && (
+              <Snackbar
+                open={openSnackbar}
+                autoHideDuration={2000}
+                onClose={() => setOpenSnackbar(false)}
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+              >
+                <Alert
+                  onClose={() => setOpenSnackbar(false)}
+                  // severity="success"
+                  severity="error"
+                  sx={{ width: "100%" }}
+                >
+                  {alertMessages}
+                </Alert>
+              </Snackbar>
+            )}
           </Box>
 
           <Grid2
@@ -306,27 +359,33 @@ function SignUpForm() {
           <Button
             type="submit"
             variant="contained"
-            sx={{ mt: 2, backgroundColor: "#7BBF9F", color: "#004d40" }}
+            sx={{
+              marginTop: "4px",
+              backgroundColor: "#7BBF9F",
+              color: "#004d40",
+            }}
             fullWidth
           >
             Register
           </Button>
         </Box>
       </Card>
-      <Snackbar
-        open={openSnackbar}
-        autoHideDuration={2000}
-        onClose={() => setOpenSnackbar(false)}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      >
-        <Alert
+      {successfulRegister && (
+        <Snackbar
+          open={openSnackbar}
+          autoHideDuration={2000}
           onClose={() => setOpenSnackbar(false)}
-          severity="success"
-          sx={{ width: "100%" }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         >
-          User registered successfully!
-        </Alert>
-      </Snackbar>
+          <Alert
+            onClose={() => setOpenSnackbar(false)}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            {alertMessages}
+          </Alert>
+        </Snackbar>
+      )}
     </Box>
   );
 }
@@ -361,12 +420,11 @@ const CardStyle = {
 };
 
 const SignInContainer = {
-  height: "50rem",
   width: "50rem",
+  height: "100vh",
   backgroundImage: `url(${backgroundImg})`,
   backgroundRepeat: "no-repeat",
   position: "relative",
-  top: "1rem",
   margin: "1rem 20rem",
   overflow: "hidden",
   "& .MuiTypography-root ": {

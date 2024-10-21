@@ -10,15 +10,15 @@ import {
   Link,
   Typography,
   Stack,
- 
   styled,
   Alert,
+  Snackbar,
   TextField,
 } from "@mui/material";
-import FormControl from '@mui/material/FormControl';
+import FormControl from "@mui/material/FormControl";
 
 import backgroungImg from "../../assets/loginsignupBG.jpeg";
-import MuiCard from '@mui/material/Card';
+import MuiCard from "@mui/material/Card";
 import UsersData from "../../Json/Users";
 
 const Card = styled(MuiCard)(({ theme }) => ({
@@ -82,6 +82,7 @@ const TextFieldStyle = styled(TextField)({
     border: "#7BBF9F",
   },
 });
+
 const LoginButtonStyle = styled(Button)({
   backgroundColor: "#7BBF9F",
   borderRadius: "1rem",
@@ -91,6 +92,8 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
@@ -114,6 +117,7 @@ const LoginPage = () => {
     if (user) {
       navigate("/home");
     } else {
+      setOpenSnackbar(true);
       setLoginError("Invalid email or password. Please try again.");
     }
   };
@@ -205,7 +209,22 @@ const LoginPage = () => {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            {loginError && <Alert severity="error">{loginError}</Alert>}
+            {loginError && (
+              <Snackbar
+                open={openSnackbar}
+                autoHideDuration={2000}
+                onClose={() => setOpenSnackbar(false)}
+                anchorOrigin={{ vertical: "bootom", horizontal: "right" }}
+              >
+                <Alert
+                  onClose={() => setOpenSnackbar(false)}
+                  severity="error"
+                  sx={{ width: "100%" }}
+                >
+                  {loginError}
+                </Alert>
+              </Snackbar>
+            )}
             <LoginButtonStyle type="submit" fullWidth variant="contained">
               Login
             </LoginButtonStyle>

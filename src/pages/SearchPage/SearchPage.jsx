@@ -55,13 +55,10 @@ const SearchPage = () => {
   const handleProfileClick = (id) => {
     navigate(`/profile/${id}`);
   };
-  // const handleAddFriend = (newFriend) => {
-  //   addFriend(newFriend);
-  //   setUsers(UnFriendUsers);
-  // };
+  
   const handleAddFriend = (newFriend) => {
     const updatedFriends = addFriend(newFriend);
-    setUsers(updatedFriends); // Update the state after adding
+    setUsers(updatedFriends); 
   };
 
   return (
